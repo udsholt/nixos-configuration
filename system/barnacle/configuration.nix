@@ -61,6 +61,7 @@ in
     firefox
     vscodium
     alacritty
+    sakura
 
     shared_mime_info # contained the missing mime information
   ];
@@ -70,6 +71,7 @@ in
   services.xserver.layout = "us";
   services.xserver.xkbOptions = "eurosign:e";
   services.xserver.windowManager.i3.enable = true;
+  services.xserver.windowManager.i3.package = pkgs.i3-gaps;
 
   # Setup alacritty as terminal
   environment.variables.TERMINAL = "alacritty";
@@ -95,6 +97,7 @@ in
       ".zshrc" = pkgs.config-zsh;
       ".gitconfig" = pkgs.config-git;
       ".config/alacritty/alacritty.yml" = pkgs.config-alacritty;
+      ".config/i3/config" = pkgs.config-i3.config;
     };
   };
 
@@ -102,9 +105,15 @@ in
   fonts.enableCoreFonts = true;
   fonts.enableFontDir = true;
   fonts.fonts = with pkgs; [
-    pkgs.font-awesome
-    pkgs.noto-fonts
-    pkgs.powerline-fonts
+    source-code-pro
+    fira-code
+    fira-mono
+
+    noto-fonts
+
+    font-awesome
+    powerline-fonts
+    twemoji-color-font
   ];
 
   # Can't exactly remember
