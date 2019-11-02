@@ -3,8 +3,9 @@
   mutate = self.callPackage ./mutate { };
 
   config-i3        = self.callPackage ./config-i3 { };
-  config-zsh       = self.callPackage ./config-zsh { };
+  config-prezto    = self.callPackage ./config-prezto { };
   config-git       = self.callPackage ./config-git { inherit secrets; };
+  config-sakura    = self.callPackage ./config-sakura { };
   config-alacritty = self.callPackage ./config-alacritty { };
 
   xeventbind = super.callPackage ./xeventbind {
@@ -14,6 +15,10 @@
   sakura = super.callPackage ./sakura {
     gtk = super.gnome2.gtk;
     vte = super.gnome2.vte;
+  };
+
+  polybar = super.polybar.override {
+    i3GapsSupport = true;
   };
 
   alacritty = super.alacritty.overrideAttrs (x: {

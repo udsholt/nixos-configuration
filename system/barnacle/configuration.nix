@@ -50,9 +50,9 @@ in
     git
     tig
 
-    psmisc
-    binutils
-    pciutils
+    psmisc   # pstree, killall etc.
+    binutils # ld etc.
+    pciutils # lspci etc.
     dnsutils # nslookup, dig, etc.
 
     pwgen
@@ -60,7 +60,6 @@ in
 
     firefox
     vscodium
-    alacritty
     sakura
 
     shared_mime_info # contained the missing mime information
@@ -70,8 +69,23 @@ in
   services.xserver.enable = true;
   services.xserver.layout = "us";
   services.xserver.xkbOptions = "eurosign:e";
+
+  # Disable xterm
+  services.xserver.desktopManager.xterm.enable = false;
+  services.xserver.desktopManager.default = "none";
+
+  # Use i3 with gaps
   services.xserver.windowManager.i3.enable = true;
   services.xserver.windowManager.i3.package = pkgs.i3-gaps;
+
+  # Use slim as login manager
+  services.xserver.displayManager.slim.enable = true;
+  services.xserver.displayManager.slim.defaultUser = "";
+  services.xserver.displayManager.slim.theme = pkgs.fetchgit {
+    url    = "https://github.com/naglis/slim-minimal.git";
+    rev    = "65759e026e8de1f957889e81ca6faf3b8c2167a7";
+    sha256 = "0ggkxgx5bdf3yvgfhs594v1h6nkjq6df4kfg5d51jpga0989c28y";
+  };
 
   # Setup alacritty as terminal
   environment.variables.TERMINAL = "sakura";
@@ -94,10 +108,11 @@ in
     isNormalUser = true;
     hashedPassword = secrets.password;
     symlinks = {
-      ".zshrc" = pkgs.config-zsh;
+      ".zshrc" = pkgs.config-prezto.zshrc;
+      ".zpreztorc" = pkgs.config-prezto.zpreztorc;
       ".gitconfig" = pkgs.config-git;
-      ".config/alacritty/alacritty.yml" = pkgs.config-alacritty;
       ".config/i3/config" = pkgs.config-i3.config;
+      ".config/sakura/sakura.conf" = pkgs.config-sakura;
     };
   };
 

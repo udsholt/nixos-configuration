@@ -1,0 +1,7 @@
+# About
+# - https://github.com/sorin-ionescu/prezto
+# - https://wikimatze.de/better-zsh-with-prezto/
+
+zstyle ':prezto:load' pmodule 'prompt' 'archive' 'utility' 'completion'
+zstyle ':prezto:module:prompt' theme 'pure'
+
