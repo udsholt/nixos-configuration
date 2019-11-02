@@ -193,8 +193,8 @@ bindsym XF86AudioMute         exec "pactl set-sink-mute 0 toggle"
 
 # Auto startup
 #exec --no-startup-id nm-applet
-#exec --no-startup-id setup-background
-#exec --no-startup-id xeventbind resolution bin/setup-background
+exec --no-startup-id @setup@
+exec --no-startup-id @xeventbind@/bin/xeventbind resolution @setup@
 
 # Airblader gaps config
 gaps inner 5

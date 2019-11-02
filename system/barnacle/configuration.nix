@@ -74,7 +74,7 @@ in
   services.xserver.windowManager.i3.package = pkgs.i3-gaps;
 
   # Setup alacritty as terminal
-  environment.variables.TERMINAL = "alacritty";
+  environment.variables.TERMINAL = "sakura";
 
   # Enable zsh
   programs.zsh.enable = true;
@@ -102,15 +102,11 @@ in
   };
 
   # Fonts
-  fonts.enableCoreFonts = true;
+  fonts.fontconfig.enable = true;
+  fonts.fontconfig.allowBitmaps = false;
   fonts.enableFontDir = true;
   fonts.fonts = with pkgs; [
     source-code-pro
-    fira-code
-    fira-mono
-
-    noto-fonts
-
     font-awesome
     powerline-fonts
     twemoji-color-font

@@ -1,12 +1,10 @@
-# Grab config from nixos
-oh_my_zsh_home="@oh_my_zsh_home@"
-oh_my_zsh_theme="@oh_my_zsh_theme@"
-
 # Using oh my zsh in a non standard location
-export ZSH=$oh_my_zsh_home
+export ZSH="@oh_my_zsh_home@"
+
+export ZSH_CUSTOM="@oh_my_zsh_custom@"
 
 # Select theme
-ZSH_THEME=$oh_my_zsh_theme
+ZSH_THEME="@oh_my_zsh_theme@"
 
 # Source: oh-my-zsh
 source $ZSH/oh-my-zsh.sh
