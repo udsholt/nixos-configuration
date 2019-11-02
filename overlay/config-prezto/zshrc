@@ -4,3 +4,7 @@ source @zsh_presto@/init.zsh
 # Setup ctrl+left and ctrl+right
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
+
+# Add user binaries
+export PATH=$HOME/bin:$PATH
+
