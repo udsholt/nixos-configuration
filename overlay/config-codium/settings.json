@@ -1,0 +1,16 @@
+{
+    "files.eol": "\n",
+    "files.associations": {
+        "*.makefile": "makefile",
+        "Makefile.*" : "makefile",
+        "Dockerfile.*" : "dockerfile"
+    },
+
+    "editor.renderWhitespace": "all",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.fontFamily": "'DejaVu Sans Mono for Powerline'",
+    "editor.fontSize": 14,
+
+    "terminal.integrated.rendererType": "auto",
+    "terminal.integrated.fontSize": 13
+}
