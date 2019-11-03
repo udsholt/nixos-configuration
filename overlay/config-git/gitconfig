@@ -5,3 +5,5 @@
 [core]
     editor = vim
 
+[include]
+   path = .githosts
