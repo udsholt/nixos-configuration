@@ -1,10 +1,10 @@
 .PHONY: switch
 
-secrets.nix:
-	cp secrets.nix.dist secrets.nix
+secret/default.nix:
+	cp secret/default.nix.dist secret/default.nix
 
-switch: secrets.nix
+switch: secret/default.nix
 	sudo nixos-rebuild switch
 
-test: secrets.nix
+test: secret/default.nix
 	sudo nixos-rebuild test

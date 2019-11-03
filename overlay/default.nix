@@ -1,5 +1,7 @@
-{ secrets }: self: super:
+{secrets}: self: super:
 {
+  inherit secrets;
+
   mutate = self.callPackage ./mutate { };
 
   config-i3        = self.callPackage ./config-i3 { };

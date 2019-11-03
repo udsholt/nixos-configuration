@@ -12,5 +12,22 @@
     "editor.fontSize": 14,
 
     "terminal.integrated.rendererType": "auto",
-    "terminal.integrated.fontSize": 13
+    "terminal.integrated.fontSize": 13,
+
+    "go.toolsGopath": "~/.vscode-go",
+    "go.buildOnSave": "off",
+    "go.vetOnSave": "off",
+    "go.useLanguageServer": true,
+    "go.languageServerExperimentalFeatures": {
+        "format": true,
+        "autoComplete": true,
+        "goToDefinition": true,
+        "hover": true,
+        "signatureHelp": true,
+        "goToTypeDefinition": true,
+        "rename": true,
+        "diagnostics": true,
+        "findReferences": true,
+        "workspaceSymbols": true
+    }
 }
