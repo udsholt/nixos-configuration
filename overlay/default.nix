@@ -3,9 +3,10 @@
   mutate = self.callPackage ./mutate { };
 
   config-i3        = self.callPackage ./config-i3 { };
-  config-prezto    = self.callPackage ./config-prezto { };
   config-git       = self.callPackage ./config-git { inherit secrets; };
+  config-rofi      = self.callPackage ./config-rofi { };
   config-sakura    = self.callPackage ./config-sakura { };
+  config-prezto    = self.callPackage ./config-prezto { };
   config-alacritty = self.callPackage ./config-alacritty { };
 
   xeventbind = super.callPackage ./xeventbind {

@@ -62,7 +62,7 @@ in
     vscodium
     sakura
 
-    shared_mime_info # contained the missing mime information
+    shared_mime_info
   ];
 
   # Enable the X11 windowing system.
@@ -112,6 +112,7 @@ in
       ".zpreztorc" = pkgs.config-prezto.zpreztorc;
       ".gitconfig" = pkgs.config-git;
       ".config/i3/config" = pkgs.config-i3.config;
+      ".config/rofi/config" = pkgs.config-rofi;
       ".config/sakura/sakura.conf" = pkgs.config-sakura;
     };
   };
