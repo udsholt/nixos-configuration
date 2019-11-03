@@ -111,6 +111,7 @@ in
       ".config/i3/config" = pkgs.config-i3.config;
       ".config/rofi/config" = pkgs.config-rofi;
       ".config/sakura/sakura.conf" = pkgs.config-sakura;
+      ".config/VSCodium/User/settings.json" = pkgs.config-codium;
     };
   };
 

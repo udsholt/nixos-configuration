@@ -7,6 +7,7 @@
   config-rofi      = self.callPackage ./config-rofi { };
   config-sakura    = self.callPackage ./config-sakura { };
   config-prezto    = self.callPackage ./config-prezto { };
+  config-codium    = self.callPackage ./config-codium { };
   config-alacritty = self.callPackage ./config-alacritty { };
 
   xeventbind = super.callPackage ./xeventbind {
