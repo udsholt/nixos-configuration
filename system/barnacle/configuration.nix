@@ -87,9 +87,6 @@ in
     sha256 = "0ggkxgx5bdf3yvgfhs594v1h6nkjq6df4kfg5d51jpga0989c28y";
   };
 
-  # Setup alacritty as terminal
-  environment.variables.TERMINAL = "sakura";
-
   # Enable zsh
   programs.zsh.enable = true;
 
