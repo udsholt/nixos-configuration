@@ -5,7 +5,9 @@
 { config, pkgs, lib, ... }:
 {
   imports = [
-    ../desktop
+    ../role/desktop.nix
+    ../role/docker.nix
+    ../role/golang.nix
   ];
 
   # NixOS release with version

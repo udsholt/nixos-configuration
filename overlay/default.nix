@@ -12,6 +12,12 @@
   config-codium    = self.callPackage ./config-codium { };
   config-alacritty = self.callPackage ./config-alacritty { };
 
+  utilties = self.callPackage ./utilties { };
+
+  cqlsh = super.callPackage ./package/cqlsh {};
+
+  sqlworkbench = super.callPackage ./package/sqlworkbench {};
+
   xeventbind = super.callPackage ./xeventbind {
     libX11 = super.xorg.libX11;
   };

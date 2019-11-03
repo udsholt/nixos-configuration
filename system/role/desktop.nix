@@ -7,7 +7,10 @@ in
   imports = [ ../../module/symlinks ];
 
   # import custom overlays
-  nixpkgs.overlays = [(import ../../overlay { inherit secrets; })];
+  # split into config overlay that uses secrets and packages
+  nixpkgs.overlays = [
+    (import ../../overlay { inherit secrets; })
+  ];
 
   # enable unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -41,6 +44,8 @@ in
     vscodium
 
     shared_mime_info
+
+    utilties
   ];
 
   # enable zsh

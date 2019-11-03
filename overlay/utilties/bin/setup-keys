@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+for filename in $HOME/.ssh/id_rsa.*; do
+    if [[ "$(ssh-add -l | grep "$filename")" != "" ]]; then
+        echo "already added: $(basename $filename)"
+        continue
+    fi
+
+    if ssh-add $filename; then
+        echo "added: $(basename $filename)"
+    else
+        echo "could not add: $(basename $filename)"
+    fi
+done
