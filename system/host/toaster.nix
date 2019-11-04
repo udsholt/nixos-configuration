@@ -7,6 +7,7 @@
   imports = [
     <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
     ../role/desktop.nix
+    ../role/golang.nix
   ];
 
   # NixOS release with version
