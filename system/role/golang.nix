@@ -1,14 +1,17 @@
 { config, pkgs, lib, ... }:
 
 {
-    environment.systemPackages = with pkgs; [
-        go
-        gcc
-    ];
+  environment.systemPackages = with pkgs; [
+    go
 
-    environment.variables = {
-        GO111MODULE= "on";
-        #GOFLAGS="-mod=vendor";
-    };
+    gcc
+
+    protobuf
+    go-protobuf
+  ];
+
+  environment.variables = {
+    GO111MODULE= "on";
+  };
 }
 

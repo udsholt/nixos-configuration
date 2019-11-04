@@ -17,7 +17,7 @@ in
 
   # enabled packages
   environment.systemPackages = with pkgs; [
-    vim
+    neovim
 
     which
     lsof
@@ -29,8 +29,12 @@ in
     unzip
     gnumake
 
+    jq
+
     git
     tig
+
+    mercurial
 
     psmisc   # pstree, killall etc.
     binutils # ld etc.

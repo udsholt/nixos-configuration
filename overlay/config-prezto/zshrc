@@ -8,3 +8,12 @@ bindkey '^[[1;5D' backward-word
 # Add user binaries
 export PATH=$HOME/bin:$PATH
 
+# Enable direnv hook (and export it to path)
+eval "$(@direnv@/bin/direnv hook zsh)"
+export PATH=@direnv@/bin:$PATH
+
+# Enable local overrides
+if [ -f ~/.zshlocal ]; then
+    source ~/.zshlocal
+fi
+
