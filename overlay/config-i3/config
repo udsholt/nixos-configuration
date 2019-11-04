@@ -156,7 +156,7 @@ bindsym XF86AudioRaiseVolume  exec "pactl set-sink-volume 0 +5%"
 bindsym XF86AudioMute         exec "pactl set-sink-mute 0 toggle"
 
 # Auto startup
-#exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 exec --no-startup-id @setup@
 exec --no-startup-id @xeventbind@/bin/xeventbind resolution @setup@
 
