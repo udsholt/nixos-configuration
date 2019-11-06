@@ -29,6 +29,8 @@ in
     unzip
     gnumake
 
+    python
+
     jq
 
     git
@@ -51,6 +53,12 @@ in
 
     utilties
   ];
+
+  # aliases
+  environment.shellAliases = {
+    vim  = "nvim";
+    view = "nvim -R";
+  };
 
   # enable zsh
   programs.zsh.enable = true;

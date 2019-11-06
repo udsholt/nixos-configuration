@@ -8,7 +8,6 @@
     ../role/desktop.nix
     ../role/docker.nix
     ../role/golang.nix
-    ../role/python.nix
   ];
 
   # NixOS release with version
