@@ -1,5 +1,6 @@
-{ mutate, oh-my-zsh, stdenvNoCC }: mutate ./zshrc {
+{ mutate, oh-my-zsh, direnv, stdenvNoCC }: mutate ./zshrc {
   inherit oh-my-zsh;
+  inherit direnv;
 
   oh_my_zsh_home="${oh-my-zsh}/share/oh-my-zsh";
   oh_my_zsh_custom = stdenvNoCC.mkDerivation {

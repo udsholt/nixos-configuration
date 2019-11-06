@@ -6,6 +6,7 @@
 
   config-i3        = self.callPackage ./config-i3 { };
   config-git       = self.callPackage ./config-git { inherit secrets; };
+  config-zsh       = self.callPackage ./config-zsh { };
   config-rofi      = self.callPackage ./config-rofi { };
   config-sakura    = self.callPackage ./config-sakura { };
   config-prezto    = self.callPackage ./config-prezto { };

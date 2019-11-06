@@ -70,8 +70,9 @@ in
     isNormalUser = true;
     hashedPassword = secrets.password;
     symlinks = {
-      ".zshrc" = pkgs.config-prezto.zshrc;
-      ".zpreztorc" = pkgs.config-prezto.zpreztorc;
+      #".zshrc" = pkgs.config-prezto.zshrc;
+      #".zpreztorc" = pkgs.config-prezto.zpreztorc;
+      ".zshrc" = pkgs.config-zsh;
       ".gitconfig" = pkgs.config-git;
       ".config/i3/config" = pkgs.config-i3.config;
       ".config/rofi/config" = pkgs.config-rofi;
