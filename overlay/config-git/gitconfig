@@ -3,7 +3,7 @@
     email = @git_user_email@
 
 [core]
-    editor = vim
+    editor = nvim
 
 [include]
    path = .githosts
