@@ -6,6 +6,7 @@
 {
   imports = [
     <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
+    ../role/users.nix
     ../role/desktop.nix
     ../role/golang.nix
     ../role/docker.nix

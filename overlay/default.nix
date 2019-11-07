@@ -13,6 +13,8 @@
   config-codium    = self.callPackage ./config-codium { };
   config-alacritty = self.callPackage ./config-alacritty { };
 
+  oh-my-zsh-custom = self.callPackage ./oh-my-zsh-custom { };
+
   utilties = self.callPackage ./utilties { };
 
   cqlsh = super.callPackage ./package/cqlsh {};
