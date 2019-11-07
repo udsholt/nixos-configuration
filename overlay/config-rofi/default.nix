@@ -1,3 +1,3 @@
 { mutate } : mutate ./config {
-    theme = mutate ./theme.rasi {};
+    theme = mutate ./theme/arc-red-dark.rasi {};
 }
