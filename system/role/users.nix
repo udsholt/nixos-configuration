@@ -3,10 +3,12 @@ let
   secrets = import ../../secret;
 in
 {
-  # https://rycee.gitlab.io/home-manager/
-  # requires:
-  # nix-channel --add https://github.com/rycee/home-manager/archive/release-19.09.tar.gz home-manager
-  # nix-channel --update
+  # Using home-manager
+  #   https://rycee.gitlab.io/home-manager/
+  #
+  # Install with:
+  #   nix-channel --add https://github.com/rycee/home-manager/archive/release-19.09.tar.gz home-manager
+  #   nix-channel --update
   imports = [ <home-manager/nixos> ];
 
   # experimental user

@@ -3,43 +3,65 @@
 { pkgs, lib, secrets, ... }:
 {
   # zsh
-  programs.zsh.enable = true;
-  programs.zsh.oh-my-zsh.enable = true;
-  programs.zsh.oh-my-zsh.custom = "${pkgs.oh-my-zsh-custom}"; # requires a package to place in folders
-  programs.zsh.oh-my-zsh.theme = "red";
+  programs.zsh = {
+    enable = true;
+    oh-my-zsh = {
+      enable = true;
+      custom = "${pkgs.oh-my-zsh-custom}"; # requires a package to place in folders
+      theme = "red";
+    };
+  };
 
   # git
-  programs.git.enable = true;
-  programs.git.userName = secrets.name;
-  programs.git.userEmail = secrets.email;
-  programs.git.extraConfig.core.editor = "nvim";
-  programs.git.includes = [
-    { path = "~/.config/git/custom"; }
-  ];
+  programs.git = {
+    enable = true;
+    userName = secrets.name;
+    userEmail = secrets.email;
+    includes = [ { path = "~/.config/git/custom"; } ];
+    extraConfig = {
+      core = {
+        editor = "nvim";
+      };
+    };
+  };
 
   # direnv
-  programs.direnv.enable = true;
-  programs.direnv.enableZshIntegration = true;
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   # i3
   # missing xeventind for resize
-  xsession.windowManager.i3.enable = true;
-  xsession.windowManager.i3.package = pkgs.i3-gaps;
-  xsession.windowManager.i3.config.modifier = "Mod4"; # windows key
-  xsession.windowManager.i3.config.fonts = ["DejaVu Sans 9"];
-  xsession.windowManager.i3.config.gaps = {
-    inner = 5;
-    outer = 0;
-  };
+  xsession.windowManager.i3 = let
+    modifier = "Mod4";
+    setup = pkgs.mutate ./script/setup-background.sh {
+      feh = "${pkgs.feh}";
+      img = ./image/red-gradient.jpg; # this does not work with "${...}", why
+    };
+  in {
+    enable = true;
+    config = {
+      modifier = "${modifier}"; # windows key
+      fonts = ["DejaVu Sans 9"];
+      gaps = { inner = 5; outer = 0; };
+      bars = [
+        {
+          fonts = ["DejaVu Sans 9"];
+        }
+      ];
 
-  xsession.windowManager.i3.config.bars = [{
-    fonts = ["DejaVu Sans 9"];
-  }];
+      # found example: github.com/tuxinaut/nix-home
+      keybindings = lib.mkOptionDefault {
+        "${modifier}+Return" = "exec ${pkgs.sakura}/bin/sakura";
+        "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -show run";
+      };
 
-  # found example: github.com/tuxinaut/nix-home
-  xsession.windowManager.i3.config.keybindings = lib.mkOptionDefault {
-    "Mod4+Return" = "exec ${pkgs.sakura}/bin/sakura";
-    "Mod4+d" = "exec ${pkgs.rofi}/bin/rofi -show run";
+      startup = [
+        { command = "${setup}"; notification = false; }
+        { command = "${pkgs.xeventbind} resolution ${setup}"; notification = false; }
+      ];
+    };
   };
 
   # rofi
@@ -55,10 +77,12 @@
   # rofi.line-margin:     0
   # rofi.font:            DejaVu Sans 9
   # rofi.theme:           @theme@
-  programs.rofi.enable = true;
-  programs.rofi.theme = "${./rofi/arc-red-dark.rasi}"; # this just works, cool!
+  programs.rofi = {
+    enable = true;
+    theme = "${./theme/rofi/arc-red-dark.rasi}"; # this just works, cool! it requires qoutes
+  };
 
   # sakura
   # https://github.com/rycee/home-manager/issues/871
-  xdg.configFile."sakura/sakura.conf".source = "${./sakura/sakura.conf}";
+  xdg.configFile."sakura/sakura.conf".source = "${./config/sakura/sakura.conf}";
 }
