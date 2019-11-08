@@ -4,23 +4,11 @@
 
   mutate = self.callPackage ./mutate { };
 
-  config-i3        = self.callPackage ./config-i3 { };
-  config-git       = self.callPackage ./config-git { inherit secrets; };
-  config-zsh       = self.callPackage ./config-zsh { };
-  config-rofi      = self.callPackage ./config-rofi { };
-  config-sakura    = self.callPackage ./config-sakura { };
-  config-prezto    = self.callPackage ./config-prezto { };
-  config-codium    = self.callPackage ./config-codium { };
-  config-alacritty = self.callPackage ./config-alacritty { };
-
   oh-my-zsh-custom = self.callPackage ./oh-my-zsh-custom { };
-
   utilties = self.callPackage ./utilties { };
 
   cqlsh = super.callPackage ./package/cqlsh {};
-
   sqlworkbench = super.callPackage ./package/sqlworkbench {};
-
   xeventbind = super.callPackage ./xeventbind {
     libX11 = super.xorg.libX11;
   };

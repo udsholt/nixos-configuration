@@ -1,1 +1,0 @@
-{ mutate }: mutate ./alacritty.yml {}

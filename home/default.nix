@@ -48,18 +48,49 @@
     enable = true;
     config = {
       modifier = "${modifier}"; # windows key
+
+      window = {
+        titlebar = false;
+      };
+
+      gaps = {
+        inner = 5;
+        outer = 0;
+      };
+
       fonts = ["DejaVu Sans 9"];
-      gaps = { inner = 5; outer = 0; };
+      colors = {
+        focused         = { border = "#cd2a37"; background = "#cd2a37"; text = "#ffffff"; indicator = "#ef5408"; childBorder = "#285577"; };
+        focusedInactive = { border = "#333333"; background = "#5f676a"; text = "#ffffff"; indicator = "#484e50"; childBorder = "#5f676a"; };
+        unfocused       = { border = "#333333"; background = "#222222"; text = "#888888"; indicator = "#292d2e"; childBorder = "#222222"; };
+        urgent          = { border = "#2f343a"; background = "#900000"; text = "#ffffff"; indicator = "#900000"; childBorder = "#900000"; };
+        placeholder     = { border = "#000000"; background = "#0c0c0c"; text = "#ffffff"; indicator = "#000000"; childBorder = "#0c0c0c"; };
+        background      = "#ffffff";
+      };
+
       bars = [
         {
           fonts = ["DejaVu Sans 9"];
+          colors = {
+            background = "#090909";
+            statusline = "#ffffff";
+            separator  = "#666666";
+            focusedWorkspace  = { border = "#ad242f"; background = "#6b161d"; text = "#ffffff"; };
+            activeWorkspace   = { border = "#333333"; background = "#5f676a"; text = "#ffffff"; };
+            inactiveWorkspace = { border = "#333333"; background = "#222222"; text = "#888888"; };
+            urgentWorkspace   = { border = "#2f343a"; background = "#900000"; text = "#ffffff"; };
+            bindingMode       = { border = "#2f343a"; background = "#900000"; text = "#ffffff"; };
+          };
         }
       ];
 
       # found example: github.com/tuxinaut/nix-home
       keybindings = lib.mkOptionDefault {
-        "${modifier}+Return" = "exec ${pkgs.sakura}/bin/sakura";
-        "${modifier}+d" = "exec ${pkgs.rofi}/bin/rofi -show run";
+        "${modifier}+Return"   = "exec ${pkgs.sakura}/bin/sakura";
+        "${modifier}+d"        = "exec ${pkgs.rofi}/bin/rofi -show run";
+        "XF86AudioLowerVolume" = "exec pactl set-sink-volume 0 -5%";
+        "XF86AudioRaiseVolume" = "exec pactl set-sink-volume 0 +5%";
+        "XF86AudioMute"        = "exec pactl set-sink-mute 0 toggle";
       };
 
       startup = [

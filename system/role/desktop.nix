@@ -3,9 +3,6 @@ let
   secrets = import ../../secret;
 in
 {
-  # import shared modules
-  imports = [ ../../module/symlinks ];
-
   # import custom overlays
   # split into config overlay that uses secrets and packages
   nixpkgs.overlays = [
@@ -67,29 +64,6 @@ in
 
   # enable ssh agent
   programs.ssh.startAgent = true;
-
-  # user
-  users.mutableUsers = false;
-  users.users.root.hashedPassword = secrets.password;
-  users.users.udsholt = rec {
-    uid = 1000;
-    home = "/home/udsholt";
-    shell = "/run/current-system/sw/bin/zsh";
-    createHome = true;
-    extraGroups = [ "wheel" ];
-    isNormalUser = true;
-    hashedPassword = secrets.password;
-    symlinks = {
-      #".zshrc" = pkgs.config-prezto.zshrc;
-      #".zpreztorc" = pkgs.config-prezto.zpreztorc;
-      ".zshrc" = pkgs.config-zsh;
-      ".gitconfig" = pkgs.config-git;
-      ".config/i3/config" = pkgs.config-i3.config;
-      ".config/rofi/config" = pkgs.config-rofi;
-      ".config/sakura/sakura.conf" = pkgs.config-sakura;
-      ".config/VSCodium/User/settings.json" = pkgs.config-codium;
-    };
-  };
 
   # enable the X11 windowing system.
   services.xserver.enable = true;

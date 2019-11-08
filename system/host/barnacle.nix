@@ -5,6 +5,7 @@
 { config, pkgs, lib, ... }:
 {
   imports = [
+    ../role/users.nix
     ../role/desktop.nix
     ../role/docker.nix
     ../role/golang.nix
