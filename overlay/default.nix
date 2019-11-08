@@ -34,6 +34,8 @@
     i3GapsSupport = true;
   };
 
+  vscodium  = super.callPackage ./vscode/vscodium.nix {};
+
   alacritty = super.alacritty.overrideAttrs (x: {
     postPatch = ''
       substituteInPlace alacritty_terminal/src/config/mouse.rs \
