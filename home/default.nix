@@ -42,7 +42,7 @@
     modifier = "Mod4";
     setup = pkgs.mutate ./script/setup-background {
       feh = "${pkgs.feh}";
-      img = ./image/red-gradient.jpg; # this does not work with "${...}", why
+      img = ./image/red.jpg; # this does not work with "${...}", why
     };
   in {
     enable = true;
