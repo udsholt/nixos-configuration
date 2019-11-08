@@ -8,6 +8,8 @@
 
     protobuf
     go-protobuf
+
+    vgo2nix
   ];
 
   environment.variables = {
