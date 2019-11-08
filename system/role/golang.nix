@@ -9,6 +9,9 @@
     protobuf
     go-protobuf
 
+    grpcurl
+    grpcui
+
     vgo2nix
   ];
 
