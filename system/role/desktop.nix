@@ -51,6 +51,7 @@ in
     slack
 
     shared_mime_info
+    libnotify
 
     utilties
   ];

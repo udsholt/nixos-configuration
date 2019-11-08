@@ -5,6 +5,11 @@
   # zsh
   programs.zsh = {
     enable = true;
+    initExtra = ''
+    if [ -f ~/.zshlocal ]; then
+      source ~/.zshlocal
+    fi
+    '';
     oh-my-zsh = {
       enable = true;
       custom = "${pkgs.oh-my-zsh-custom}"; # requires a package to place in folders
@@ -80,6 +85,11 @@
   programs.rofi = {
     enable = true;
     theme = "${./theme/rofi/arc-red-dark.rasi}"; # this just works, cool! it requires qoutes
+  };
+
+  # dunst
+  services.dunst = {
+    enable = true;
   };
 
   # sakura
