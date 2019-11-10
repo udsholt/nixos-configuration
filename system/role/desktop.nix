@@ -46,6 +46,7 @@ in
     firefox
     vscodium
     slack
+    sublime
 
     shared_mime_info
     libnotify
