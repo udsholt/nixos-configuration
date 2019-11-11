@@ -42,7 +42,7 @@
     modifier = "Mod4";
     setup = pkgs.mutate ./script/setup-background {
       feh = "${pkgs.feh}";
-      img = ./image/red.jpg; # this does not work with "${...}", why
+      img = ./image/red-moon.png; # this does not work with "${...}", why
     };
   in {
     enable = true;
@@ -51,6 +51,7 @@
 
       window = {
         titlebar = false;
+        border = 1;
       };
 
       gaps = {
@@ -60,10 +61,10 @@
 
       fonts = ["DejaVu Sans 9"];
       colors = {
-        focused         = { border = "#cd2a37"; background = "#cd2a37"; text = "#ffffff"; indicator = "#ef5408"; childBorder = "#285577"; };
-        focusedInactive = { border = "#333333"; background = "#5f676a"; text = "#ffffff"; indicator = "#484e50"; childBorder = "#5f676a"; };
-        unfocused       = { border = "#333333"; background = "#222222"; text = "#888888"; indicator = "#292d2e"; childBorder = "#222222"; };
-        urgent          = { border = "#2f343a"; background = "#900000"; text = "#ffffff"; indicator = "#900000"; childBorder = "#900000"; };
+        focused         = { border = "#cd2a37"; background = "#cd2a37"; text = "#ffffff"; indicator = "#ef5408"; childBorder = "#cd2a37"; };
+        focusedInactive = { border = "#333333"; background = "#5f676a"; text = "#ffffff"; indicator = "#484e50"; childBorder = "#333333"; };
+        unfocused       = { border = "#333333"; background = "#222222"; text = "#888888"; indicator = "#292d2e"; childBorder = "#333333"; };
+        urgent          = { border = "#2f343a"; background = "#900000"; text = "#ffffff"; indicator = "#900000"; childBorder = "#2f343a"; };
         placeholder     = { border = "#000000"; background = "#0c0c0c"; text = "#ffffff"; indicator = "#000000"; childBorder = "#0c0c0c"; };
         background      = "#ffffff";
       };
