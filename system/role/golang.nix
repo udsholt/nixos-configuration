@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     go_1_13
 
-    gcc
+    #gcc
 
     protobuf
     go-protobuf

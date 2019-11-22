@@ -45,6 +45,7 @@ in
 
     firefox
     vscodium
+    vscode-with-extensions
     slack
     sublime
 

@@ -29,6 +29,26 @@
 
   vscodium  = super.callPackage ./vscode/vscodium.nix {};
 
+  vscode-with-extensions = super.vscode-with-extensions.override {
+    vscodeExtensions = with self.vscode-extensions; [
+      ms-vscode.cpptools
+      bbenoist.Nix
+    ] ++ self.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "trailing-spaces";
+        publisher = "shardulm94";
+        version = "0.3.1";
+        sha256 = "0h30zmg5rq7cv7kjdr5yzqkkc1bs20d72yz9rjqag32gwf46s8b8";
+      }
+      {
+        name = "vscode-direnv";
+        publisher = "rubymaniac";
+        version = "0.0.2";
+        sha256 = "1gml41bc77qlydnvk1rkaiv95rwprzqgj895kxllqy4ps8ly6nsd";
+      }
+    ];
+  };
+
   alacritty = super.alacritty.overrideAttrs (x: {
     postPatch = ''
       substituteInPlace alacritty_terminal/src/config/mouse.rs \
