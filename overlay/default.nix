@@ -22,6 +22,11 @@
     i3GapsSupport = true;
   };
 
+  go_1_13 = super.callPackage ./go/1.13.nix {
+    Security = "";
+    Foundation = "";
+  };
+
   vscodium  = super.callPackage ./vscode/vscodium.nix {};
 
   alacritty = super.alacritty.overrideAttrs (x: {
