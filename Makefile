@@ -14,6 +14,7 @@ sync:
 	curl -f -o overlay/vscode/vscodium.nix https://raw.githubusercontent.com/NixOS/nixpkgs/master/pkgs/applications/editors/vscode/vscodium.nix
 	curl -f -o overlay/vscode/vscode.nix https://raw.githubusercontent.com/NixOS/nixpkgs/master/pkgs/applications/editors/vscode/vscode.nix
 
+sync-go:
 	# until go 1.13 becomes available on stable
 	curl -f -o overlay/go/1.13.nix https://raw.githubusercontent.com/NixOS/nixpkgs/master/pkgs/development/compilers/go/1.13.nix
 	curl -f -o overlay/go/setup-hook.sh https://raw.githubusercontent.com/NixOS/nixpkgs/master/pkgs/development/compilers/go/setup-hook.sh
