@@ -22,10 +22,14 @@
     i3GapsSupport = true;
   };
 
-  go_1_13 = super.callPackage ./go/1.13.nix {
+  go_1_13_plain = super.callPackage ./go/1.13.nix {
     Security = "";
     Foundation = "";
   };
+
+  go_1_13 = self.go_1_13_plain.overrideAttrs(oldAttrs: {
+    checkPhase = '''';
+  });
 
   vscodium  = super.callPackage ./vscode/vscodium.nix {};
 
