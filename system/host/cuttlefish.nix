@@ -9,6 +9,7 @@
     ../role/desktop.nix
     ../role/docker.nix
     ../role/golang.nix
+    ../role/kubefwd.nix
   ];
 
   # NixOS release with version

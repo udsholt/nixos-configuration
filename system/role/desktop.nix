@@ -54,7 +54,6 @@
     utilties
 
     foreman
-    kubefwd
   ];
 
   # aliases
