@@ -53,6 +53,9 @@ in
     libnotify
 
     utilties
+
+    foreman
+    kubefwd
   ];
 
   # aliases

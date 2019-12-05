@@ -13,6 +13,8 @@
     libX11 = super.xorg.libX11;
   };
 
+  kubefwd = super.callPackage ./kubefwd {};
+
   sakura = super.callPackage ./sakura {
     gtk = super.gnome2.gtk;
     vte = super.gnome2.vte;
