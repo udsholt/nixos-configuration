@@ -18,6 +18,7 @@ in
 
     which
     lsof
+    file
     tree
     wget
     curl
