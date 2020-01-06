@@ -30,6 +30,7 @@ in
     python
 
     jq
+    yq-go
 
     git
     tig
