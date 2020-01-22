@@ -47,6 +47,7 @@
     vscode-with-extensions
     slack
     sublime
+    mplayer
 
     shared_mime_info
     libnotify
