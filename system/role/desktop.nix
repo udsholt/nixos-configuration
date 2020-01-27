@@ -1,12 +1,9 @@
 { config, pkgs, lib, ... }:
-let
-  secrets = import ../../secret;
-in
 {
   # import custom overlays
   # split into config overlay that uses secrets and packages
   nixpkgs.overlays = [
-    (import ../../overlay { inherit secrets; })
+    (import ../../overlay)
   ];
 
   # enable unfree packages
@@ -110,6 +107,7 @@ in
     "/share/mime"
   ];
 
+  # required for kubefwd to work
   environment.etc.hosts.mode = "0644";
 }
 

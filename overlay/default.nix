@@ -1,7 +1,5 @@
-{secrets}: self: super:
+self: super:
 {
-  inherit secrets;
-
   mutate = self.callPackage ./mutate { };
 
   oh-my-zsh-custom = self.callPackage ./oh-my-zsh-custom { };
