@@ -109,5 +109,7 @@ in
     "/share/themes"
     "/share/mime"
   ];
+
+  environment.etc.hosts.mode = "0644";
 }
 
