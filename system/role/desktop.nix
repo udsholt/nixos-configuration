@@ -54,6 +54,7 @@
     utilties
 
     foreman
+    sops
   ];
 
   # aliases
