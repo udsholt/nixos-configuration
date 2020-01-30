@@ -10,6 +10,7 @@
     ../role/docker.nix
     ../role/golang.nix
     ../role/kubefwd.nix
+    ../role/terraform.nix
   ];
 
   # NixOS release with version

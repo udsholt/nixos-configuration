@@ -106,8 +106,5 @@
     "/share/themes"
     "/share/mime"
   ];
-
-  # required for kubefwd to work
-  environment.etc.hosts.mode = "0644";
 }
 
