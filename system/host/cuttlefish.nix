@@ -5,6 +5,7 @@
 { config, pkgs, lib, ... }:
 {
   imports = [
+    ../role/base.nix
     ../role/users.nix
     ../role/desktop.nix
     ../role/docker.nix

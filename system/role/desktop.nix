@@ -1,14 +1,5 @@
 { config, pkgs, lib, ... }:
 {
-  # import custom overlays
-  # split into config overlay that uses secrets and packages
-  nixpkgs.overlays = [
-    (import ../../overlay)
-  ];
-
-  # enable unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # enabled packages
   environment.systemPackages = with pkgs; [
     neovim
@@ -43,7 +34,7 @@
     mkpasswd
 
     firefox
-    vscodium
+    vscodium_unstable
     slack
     sublime
 
