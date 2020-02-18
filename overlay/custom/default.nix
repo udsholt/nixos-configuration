@@ -13,6 +13,8 @@ self: super:
 
   kubefwd = super.callPackage ./kubefwd {};
 
+  istio = super.callPackage ./istio {};
+
   sakura = super.callPackage ./sakura {
     gtk = super.gnome2.gtk;
     vte = super.gnome2.vte;
@@ -27,5 +29,7 @@ self: super:
       substituteInPlace alacritty_terminal/src/config/mouse.rs \
         --replace xdg-open ${self.xdg_utils}/bin/xdg-open
     '';
+
+
   });
 }

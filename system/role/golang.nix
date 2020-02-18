@@ -11,6 +11,8 @@
 
     grpcurl
     grpcui
+
+    vgo2nix
   ];
 
   environment.variables = {
