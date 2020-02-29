@@ -1,9 +1,6 @@
 { config, pkgs, lib, ... }:
-
 {
   environment.systemPackages = with pkgs; [
-    terraform
+    terraform_0_12_unstable
   ];
 }
-
-
