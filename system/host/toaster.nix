@@ -10,7 +10,7 @@
     ../role/users.nix
     ../role/desktop.nix
     ../role/golang.nix
-    ../role/docker.nix
+    ../role/gaming.nix
   ];
 
   # NixOS release with version
