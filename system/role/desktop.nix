@@ -22,6 +22,7 @@
 
     git
     tig
+    gitAndTools.hub
 
     mercurial
 
@@ -37,7 +38,6 @@
     vscodium_unstable
     slack
     sublime
-    mplayer
 
     shared_mime_info
     libnotify
