@@ -12,6 +12,7 @@
     ../role/golang.nix
     ../role/kubernetes.nix
     ../role/terraform.nix
+    ../role/node.nix
   ];
 
   # NixOS release with version
