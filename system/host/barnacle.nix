@@ -16,7 +16,7 @@
   ];
 
   # NixOS release with version
-  system.stateVersion = "19.09";
+  system.stateVersion = "20.03";
 
   # Hello, i'm running in virtualbox
   virtualisation.virtualbox.guest.enable = true;
@@ -52,5 +52,23 @@
   swapDevices = [ ];
 
   nix.maxJobs = lib.mkDefault 4;
+
+  # Issues with virtual box
+  # https://discourse.nixos.org/t/does-anybody-have-working-automatic-resizing-in-virtualbox/7391
+  #
+  # Waiting on:
+  # https://github.com/NixOS/nixpkgs/pull/86473
+  services.xserver.videoDrivers = lib.mkForce [ "vmware" "virtualbox" "modesetting" ];
+  systemd.services.virtualbox-resize = {
+    description = "VirtualBox Guest Screen Resizing";
+
+    wantedBy = [ "multi-user.target" ];
+    requires = [ "dev-vboxguest.device" ];
+    after = [ "dev-vboxguest.device" ];
+
+    unitConfig.ConditionVirtualization = "oracle";
+
+    serviceConfig.ExecStart = "@${config.boot.kernelPackages.virtualboxGuestAdditions}/bin/VBoxClient -fv --vmsvga";
+  };
 }
 
