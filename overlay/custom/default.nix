@@ -29,7 +29,5 @@ self: super:
       substituteInPlace alacritty_terminal/src/config/mouse.rs \
         --replace xdg-open ${self.xdg_utils}/bin/xdg-open
     '';
-
-
   });
 }

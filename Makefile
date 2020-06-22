@@ -9,7 +9,7 @@ channels:
 	sudo nix-channel --add https://nixos.org/channels/nixos-unstable/nixexprs.tar.xz nixos-unstable
 	sudo nix-channel --update nixos-unstable
 	@echo "Adding home-manager to channels..."
-	sudo nix-channel --add https://github.com/rycee/home-manager/archive/release-19.09.tar.gz home-manager
+	sudo nix-channel --add https://github.com/rycee/home-manager/archive/release-20.03.tar.gz home-manager
 	sudo nix-channel --update home-mananger
 
 test: secret/default.nix

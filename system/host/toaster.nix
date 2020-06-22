@@ -9,8 +9,8 @@
     ../role/base.nix
     ../role/users.nix
     ../role/desktop.nix
-    ../role/golang.nix
-    ../role/gaming.nix
+    #../role/golang.nix
+    #../role/gaming.nix
   ];
 
   # NixOS release with version
@@ -34,8 +34,10 @@
   time.timeZone = "Europe/Copenhagen";
 
   # Danish layout
-  i18n.consoleFont   = "lat9w-16";
-  i18n.consoleKeyMap = "dk";
+  # trace: warning: The option `i18n.consoleKeyMap' defined in `/etc/nixos/configuration.nix' has been renamed to `console.keyMap'.
+  # trace: warning: The option `i18n.consoleFont' defined in `/etc/nixos/configuration.nix' has been renamed to `console.font'.
+  console.font   = "lat9w-16";
+  console.keyMap = "dk";
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Danish xserver
@@ -63,15 +65,16 @@
   ];
 
   # Filesystem layout
-  fileSystems = [{
-    mountPoint = "/";
-    device = "/dev/disk/by-uuid/6aaf3077-261a-44b8-9723-b35862fd784b";
-    fsType = "ext4";
-  }{
-    mountPoint = "/home";
-    device = "/dev/disk/by-uuid/098b5c2a-2312-4c0d-8fc3-720fbc48ed99";
-    fsType = "ext4";
-  }];
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-uuid/6aaf3077-261a-44b8-9723-b35862fd784b";
+      fsType = "ext4";
+    };
+    "/home" = {
+      device = "/dev/disk/by-uuid/098b5c2a-2312-4c0d-8fc3-720fbc48ed99";
+      fsType = "ext4";
+    };
+  };
 
   # Swapfile
   swapDevices = [{
