@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    go_1_13_unstable
+    go
 
     #gcc
 
@@ -16,7 +16,7 @@
   ];
 
   environment.variables = {
-    GOROOT = [ "${pkgs.go_1_13_unstable.out}/share/go" ];
+    #GOROOT = [ "${pkgs.go_1_13_unstable.out}/share/go" ];
     GO111MODULE= "on";
   };
 }

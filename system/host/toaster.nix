@@ -9,7 +9,7 @@
     ../role/base.nix
     ../role/users.nix
     ../role/desktop.nix
-    #../role/golang.nix
+    ../role/golang.nix
     #../role/gaming.nix
   ];
 
